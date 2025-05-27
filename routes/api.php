@@ -1,6 +1,13 @@
 <?php
 
-use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\PostsController;
 use Illuminate\Support\Facades\Route;
 
-Route::apiResource('posts', PostController::class);
+// Make sure this is correctly defined
+Route::apiResource('posts', PostsController::class);
+
+// For debugging, add a test route
+Route::get('test', function() {
+    return response()->json(['message' => 'API is working']);
+});
+
